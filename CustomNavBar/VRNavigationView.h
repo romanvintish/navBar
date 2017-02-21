@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  VRNavigationView.h
 //  CustomNavBar
 //
 //  Created by VINTISH ROMAN on 2/21/17.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface VRNavigationView : UIView
 
 @end
