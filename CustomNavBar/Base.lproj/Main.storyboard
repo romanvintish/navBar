@@ -29,56 +29,66 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xzB-fs-733">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TlD-YE-sR2">
-                                        <rect key="frame" x="8" y="22" width="32" height="32"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HR6-sP-Mg1">
+                                        <rect key="frame" x="0.0" y="20" width="375" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TlD-YE-sR2">
+                                                <rect key="frame" x="330.5" y="7.5" width="39.5" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="TlD-YE-sR2" secondAttribute="height" multiplier="1:1" id="uHn-H2-x8h"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="rightButtonTapped:" destination="Lar-hc-lts" eventType="touchUpInside" id="xBL-2l-9Vn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkY-Lg-iBR">
+                                                <rect key="frame" x="5" y="7.5" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="hkY-Lg-iBR" secondAttribute="height" multiplier="1:1" id="S4P-nq-bN3"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="leftButtonTapped:" destination="Lar-hc-lts" eventType="touchUpInside" id="QID-1d-LBL"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="LNV-tV-MZP">
+                                                <rect key="frame" x="50" y="7" width="275.5" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="TlD-YE-sR2" secondAttribute="height" multiplier="1:1" id="uHn-H2-x8h"/>
+                                            <constraint firstItem="TlD-YE-sR2" firstAttribute="centerY" secondItem="HR6-sP-Mg1" secondAttribute="centerY" id="5MJ-Kv-n7S"/>
+                                            <constraint firstItem="LNV-tV-MZP" firstAttribute="leading" secondItem="hkY-Lg-iBR" secondAttribute="trailing" constant="5" id="Fb2-Kc-BFz"/>
+                                            <constraint firstAttribute="trailing" secondItem="TlD-YE-sR2" secondAttribute="trailing" constant="5" id="Jta-uh-jjH"/>
+                                            <constraint firstItem="TlD-YE-sR2" firstAttribute="width" secondItem="HR6-sP-Mg1" secondAttribute="width" multiplier="0.106" id="MKW-QH-rmI"/>
+                                            <constraint firstItem="TlD-YE-sR2" firstAttribute="leading" secondItem="LNV-tV-MZP" secondAttribute="trailing" constant="5" id="dEa-f4-LZS"/>
+                                            <constraint firstItem="hkY-Lg-iBR" firstAttribute="centerY" secondItem="HR6-sP-Mg1" secondAttribute="centerY" id="n6i-iv-ufR"/>
+                                            <constraint firstItem="hkY-Lg-iBR" firstAttribute="leading" secondItem="HR6-sP-Mg1" secondAttribute="leading" constant="5" id="u7o-u1-LS8"/>
+                                            <constraint firstItem="hkY-Lg-iBR" firstAttribute="width" secondItem="HR6-sP-Mg1" secondAttribute="width" multiplier="0.106" id="uyf-uU-4th"/>
+                                            <constraint firstItem="LNV-tV-MZP" firstAttribute="top" secondItem="hkY-Lg-iBR" secondAttribute="top" id="vYg-9O-20y"/>
+                                            <constraint firstItem="LNV-tV-MZP" firstAttribute="bottom" secondItem="hkY-Lg-iBR" secondAttribute="bottom" id="x4y-NE-3xg"/>
                                         </constraints>
-                                        <connections>
-                                            <action selector="leftButtonTapped:" destination="Lar-hc-lts" eventType="touchUpInside" id="dDd-WM-Soq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkY-Lg-iBR">
-                                        <rect key="frame" x="335" y="22" width="32" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="hkY-Lg-iBR" secondAttribute="height" multiplier="1:1" id="S4P-nq-bN3"/>
-                                        </constraints>
-                                        <connections>
-                                            <action selector="rightButtonTapped:" destination="Lar-hc-lts" eventType="touchUpInside" id="7Tv-BA-oCV"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="LNV-tV-MZP">
-                                        <rect key="frame" x="43" y="22" width="289" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="hkY-Lg-iBR" firstAttribute="top" secondItem="Lar-hc-lts" secondAttribute="top" constant="22" id="0dI-p2-qiw"/>
-                                    <constraint firstItem="TlD-YE-sR2" firstAttribute="width" secondItem="Lar-hc-lts" secondAttribute="width" multiplier="0.0853" id="8ke-1y-3Ia"/>
+                                    <constraint firstItem="HR6-sP-Mg1" firstAttribute="top" secondItem="Lar-hc-lts" secondAttribute="top" constant="20" id="9IC-uX-L7w"/>
                                     <constraint firstAttribute="bottom" secondItem="xzB-fs-733" secondAttribute="bottom" id="Dqk-es-A7Z"/>
                                     <constraint firstAttribute="trailing" secondItem="xzB-fs-733" secondAttribute="trailing" id="HoV-Uy-SPr"/>
-                                    <constraint firstItem="LNV-tV-MZP" firstAttribute="bottom" secondItem="TlD-YE-sR2" secondAttribute="bottom" id="TOS-dj-xJ0"/>
-                                    <constraint firstItem="LNV-tV-MZP" firstAttribute="top" secondItem="TlD-YE-sR2" secondAttribute="top" id="Tje-Om-x9d"/>
-                                    <constraint firstItem="LNV-tV-MZP" firstAttribute="leading" secondItem="TlD-YE-sR2" secondAttribute="trailing" constant="3" id="UUt-mF-pJf"/>
-                                    <constraint firstItem="TlD-YE-sR2" firstAttribute="leading" secondItem="Lar-hc-lts" secondAttribute="leading" constant="8" id="ZYF-A0-sqC"/>
-                                    <constraint firstItem="hkY-Lg-iBR" firstAttribute="width" secondItem="hkY-Lg-iBR" secondAttribute="height" multiplier="1:1" id="azl-Aq-Jl4"/>
                                     <constraint firstItem="xzB-fs-733" firstAttribute="leading" secondItem="Lar-hc-lts" secondAttribute="leading" id="cjb-JS-x0F"/>
+                                    <constraint firstItem="HR6-sP-Mg1" firstAttribute="leading" secondItem="Lar-hc-lts" secondAttribute="leading" id="fLv-0A-3Q0"/>
                                     <constraint firstAttribute="width" secondItem="Lar-hc-lts" secondAttribute="height" multiplier="15:3" id="fOP-Ho-PbU"/>
-                                    <constraint firstItem="hkY-Lg-iBR" firstAttribute="leading" secondItem="LNV-tV-MZP" secondAttribute="trailing" constant="3" id="lQA-7u-H4J"/>
-                                    <constraint firstItem="hkY-Lg-iBR" firstAttribute="width" secondItem="TlD-YE-sR2" secondAttribute="width" id="lgg-mq-lE2"/>
-                                    <constraint firstItem="TlD-YE-sR2" firstAttribute="top" secondItem="Lar-hc-lts" secondAttribute="top" constant="22" id="nAK-dv-JEW"/>
+                                    <constraint firstAttribute="bottom" secondItem="HR6-sP-Mg1" secondAttribute="bottom" id="m7w-hX-dZ9"/>
                                     <constraint firstItem="xzB-fs-733" firstAttribute="top" secondItem="Lar-hc-lts" secondAttribute="top" id="smc-8R-66m"/>
-                                    <constraint firstAttribute="trailing" secondItem="hkY-Lg-iBR" secondAttribute="trailing" constant="8" id="yRi-OI-gf4"/>
+                                    <constraint firstAttribute="trailing" secondItem="HR6-sP-Mg1" secondAttribute="trailing" id="xj9-2r-Zkl"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="barDataSource" destination="WO9-VR-d9y" id="z4b-QM-gDO"/>
                                     <outlet property="barDelegate" destination="WO9-VR-d9y" id="seG-tK-Ngm"/>
                                     <outlet property="imageView" destination="xzB-fs-733" id="AuT-xZ-HM5"/>
-                                    <outlet property="leftButton" destination="TlD-YE-sR2" id="0ZP-ez-tpF"/>
-                                    <outlet property="rightButton" destination="hkY-Lg-iBR" id="OMi-js-War"/>
+                                    <outlet property="leftButton" destination="hkY-Lg-iBR" id="LDS-O6-55a"/>
+                                    <outlet property="rightButton" destination="TlD-YE-sR2" id="pkm-wZ-zbp"/>
                                     <outlet property="title" destination="LNV-tV-MZP" id="iXK-an-Zaw"/>
                                 </connections>
                             </view>
@@ -94,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vO3-Gv-XdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-146.40000000000001" y="2518.2908545727137"/>
+            <point key="canvasLocation" x="-125.59999999999999" y="2494.9025487256372"/>
         </scene>
     </scenes>
 </document>

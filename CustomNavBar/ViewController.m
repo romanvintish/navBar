@@ -24,24 +24,24 @@
 
 #pragma mark - VRNavigationDataSource
 
-- (NSString*)cellForNavigationBarTitle{
-    return @"ASDADADASDADADASDADADASDADADASDADADASDADADA";
+- (NSString*)getNavigationBarTitle{
+    return @"ASDADADASD";
 }
 
-- (UIColor*)cellForNavigationBarBackgroundColor{
+- (UIColor*)getNavigationBarBackgroundColor{
     return [UIColor redColor];
 }
 
-- (UIImage*)cellForNavigationBarBackgroundImage{
+- (UIImage*)getNavigationBarBackgroundImage{
     return [UIImage imageNamed:@"wood+pattern+texture+7.jpg"];
 }
 
-- (UIImage*)cellForLeftBarButtonItemBackgroundImage{
+- (UIImage*)getLeftBarButtonItemBackgroundImage{
     //return [UIImage imageNamed:@"iTunes.png"];
     return nil;
 }
 
-- (UIImage*)cellForRightBarButtonItemBackgroundImage{
+- (UIImage*)getRightBarButtonItemBackgroundImage{
     return [UIImage imageNamed:@"Mail2.png"];
 }
 

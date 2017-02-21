@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-
-#import <UIKit/UIKit.h>
-
 @protocol VRNavigationDelegate <NSObject>
+
+@required
+
+- (void)didSelectLeftBarButtonItem;
 
 @optional
 
-- (void)didSelectLeftBarButtonItem;
 - (void)didSelectRightBarButtonItem;
 
 @end
@@ -25,11 +25,11 @@
 
 @optional
 
-- (NSString*)cellForNavigationBarTitle;
-- (UIColor*)cellForNavigationBarBackgroundColor;
-- (UIImage*)cellForNavigationBarBackgroundImage;
-- (UIImage*)cellForLeftBarButtonItemBackgroundImage;
-- (UIImage*)cellForRightBarButtonItemBackgroundImage;
+- (NSString*)getNavigationBarTitle;
+- (UIColor*)getNavigationBarBackgroundColor;
+- (UIImage*)getNavigationBarBackgroundImage;
+- (UIImage*)getLeftBarButtonItemBackgroundImage;
+- (UIImage*)getRightBarButtonItemBackgroundImage;
 
 @end
 

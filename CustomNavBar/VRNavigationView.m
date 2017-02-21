@@ -8,19 +8,21 @@
 
 #import "VRNavigationView.h"
 
+
+NSString const *kDefaultLeftButtonImage = @"green-back-button-png-image-69590.png";
+
 @interface VRNavigationView()
 
-@property(nonatomic, strong) IBOutlet UIButton *leftButton;
-@property(nonatomic, strong) IBOutlet UIButton *rightButton;
-@property(nonatomic, strong) IBOutlet UILabel *title;
-@property(nonatomic, strong) IBOutlet UIImageView *imageView;
+@property(nonatomic, weak) IBOutlet UIButton *leftButton;
+@property(nonatomic, weak) IBOutlet UIButton *rightButton;
+@property(nonatomic, weak) IBOutlet UILabel *title;
+@property(nonatomic, weak) IBOutlet UIImageView *imageView;
 
 @end
 
 @implementation VRNavigationView
 
 - (void)drawRect:(CGRect)rect {
-    // Drawing code
 }
 
 -(void)awakeFromNib{
@@ -43,40 +45,79 @@
 }
 
 -(void)setupAppearance{
-    if ([self.barDataSource respondsToSelector:@selector(cellForNavigationBarTitle)])
+    if ([self.barDataSource respondsToSelector:@selector(getNavigationBarTitle)])
     {
-        self.title.text = [self.barDataSource cellForNavigationBarTitle];
+        if ([self.barDataSource getNavigationBarTitle] != nil)
+        {
+            if ([[self.barDataSource getNavigationBarTitle] isKindOfClass:[NSString class]])
+            {
+                self.title.text = [self.barDataSource getNavigationBarTitle];
+            }
+        }
     }
     
-    if ([self.barDataSource respondsToSelector:@selector(cellForNavigationBarBackgroundColor)])
+    if ([self.barDataSource respondsToSelector:@selector(getNavigationBarBackgroundColor)])
     {
-        self.backgroundColor = [self.barDataSource cellForNavigationBarBackgroundColor];
+        if ([self.barDataSource getNavigationBarBackgroundColor] != nil)
+        {
+            if ([[self.barDataSource getNavigationBarBackgroundColor] isKindOfClass:[UIColor class]])
+            {
+                self.backgroundColor = [self.barDataSource getNavigationBarBackgroundColor];
+            }
+        }
     }
-    else{
+    else
+    {
         self.backgroundColor = [UIColor lightGrayColor];
     }
     
-    if ([self.barDataSource respondsToSelector:@selector(cellForNavigationBarBackgroundImage)])
+    if ([self.barDataSource respondsToSelector:@selector(getNavigationBarBackgroundImage)])
     {
-        self.imageView.image = [self.barDataSource cellForNavigationBarBackgroundImage];
+        if ([self.barDataSource getNavigationBarBackgroundImage] != nil)
+        {
+            if ([[self.barDataSource getNavigationBarBackgroundImage] isKindOfClass:[UIImage class]])
+            {
+                self.imageView.image = [self.barDataSource getNavigationBarBackgroundImage];
+            }
+        }
     }
     
-    if ([self.barDataSource respondsToSelector:@selector(cellForLeftBarButtonItemBackgroundImage)])
+    if ([self.barDataSource respondsToSelector:@selector(getLeftBarButtonItemBackgroundImage)])
     {
-        if([self.barDataSource cellForLeftBarButtonItemBackgroundImage] != nil)
+        if([self.barDataSource getLeftBarButtonItemBackgroundImage] != nil)
         {
-        [self.leftButton setBackgroundImage:[self.barDataSource cellForLeftBarButtonItemBackgroundImage] forState:UIControlStateNormal];
+            if ([[self.barDataSource getLeftBarButtonItemBackgroundImage] isKindOfClass:[UIImage class]])
+            {
+                [self.leftButton setBackgroundImage:[self.barDataSource getLeftBarButtonItemBackgroundImage] forState:UIControlStateNormal];
+            }
         }
         else
         {
-            [self.leftButton setBackgroundImage:[UIImage imageNamed:@"green-back-button-png-image-69590"] forState:UIControlStateNormal];
+            if ([UIImage imageNamed:kDefaultLeftButtonImage] != nil)
+            {
+            [self.leftButton setBackgroundImage:[UIImage imageNamed:kDefaultLeftButtonImage] forState:UIControlStateNormal];
+            }
+        }
+    }
+    else
+    {
+        if ([UIImage imageNamed:kDefaultLeftButtonImage] != nil)
+        {
+            [self.leftButton setBackgroundImage:[UIImage imageNamed:kDefaultLeftButtonImage] forState:UIControlStateNormal];
         }
     }
     
-    if ([self.barDataSource respondsToSelector:@selector(cellForRightBarButtonItemBackgroundImage)])
+    if ([self.barDataSource respondsToSelector:@selector(getRightBarButtonItemBackgroundImage)])
     {
-        [self.rightButton setBackgroundImage:[self.barDataSource cellForRightBarButtonItemBackgroundImage] forState:UIControlStateNormal];
+        if([self.barDataSource getRightBarButtonItemBackgroundImage] != nil)
+        {
+            if ([[self.barDataSource getRightBarButtonItemBackgroundImage] isKindOfClass:[UIImage class]])
+            {
+                [self.rightButton setBackgroundImage:[self.barDataSource getRightBarButtonItemBackgroundImage] forState:UIControlStateNormal];
+            }
+        }
     }
 }
+
 
 @end
