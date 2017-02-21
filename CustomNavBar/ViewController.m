@@ -16,22 +16,44 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - VRNavigationDataSource
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSString*)cellForNavigationBarTitle{
+    return @"ASDADADASDADADASDADADASDADADASDADADASDADADA";
 }
-*/
+
+- (UIColor*)cellForNavigationBarBackgroundColor{
+    return [UIColor redColor];
+}
+
+- (UIImage*)cellForNavigationBarBackgroundImage{
+    return [UIImage imageNamed:@"wood+pattern+texture+7.jpg"];
+}
+
+- (UIImage*)cellForLeftBarButtonItemBackgroundImage{
+    //return [UIImage imageNamed:@"iTunes.png"];
+    return nil;
+}
+
+- (UIImage*)cellForRightBarButtonItemBackgroundImage{
+    return [UIImage imageNamed:@"Mail2.png"];
+}
+
+#pragma mark - VRNavigationDelegate 
+
+- (void)didSelectLeftBarButtonItem{
+    NSLog(@"left");
+}
+
+- (void)didSelectRightBarButtonItem{
+    NSLog(@"right");
+
+}
 
 @end

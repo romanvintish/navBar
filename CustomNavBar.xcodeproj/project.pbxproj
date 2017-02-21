@@ -9,10 +9,15 @@
 /* Begin PBXBuildFile section */
 		CC988AC21E5B4A6900BAC694 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC988AC11E5B4A6900BAC694 /* main.m */; };
 		CC988AC51E5B4A6900BAC694 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC988AC41E5B4A6900BAC694 /* AppDelegate.m */; };
-		CC988AC81E5B4A6900BAC694 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC988AC71E5B4A6900BAC694 /* ViewController.m */; };
 		CC988ACB1E5B4A6A00BAC694 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC988AC91E5B4A6A00BAC694 /* Main.storyboard */; };
 		CC988ACD1E5B4A6A00BAC694 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC988ACC1E5B4A6A00BAC694 /* Assets.xcassets */; };
 		CC988AD01E5B4A6A00BAC694 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC988ACE1E5B4A6A00BAC694 /* LaunchScreen.storyboard */; };
+		CC988AED1E5C2E5C00BAC694 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC988AEC1E5C2E5C00BAC694 /* ViewController.m */; };
+		CC988AF01E5C34FD00BAC694 /* VRNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC988AEF1E5C34FD00BAC694 /* VRNavigationView.m */; };
+		CC988AF51E5C447900BAC694 /* green-back-button-png-image-69590.png in Resources */ = {isa = PBXBuildFile; fileRef = CC988AF11E5C447900BAC694 /* green-back-button-png-image-69590.png */; };
+		CC988AF61E5C447900BAC694 /* iTunes.png in Resources */ = {isa = PBXBuildFile; fileRef = CC988AF21E5C447900BAC694 /* iTunes.png */; };
+		CC988AF71E5C447900BAC694 /* Mail2.png in Resources */ = {isa = PBXBuildFile; fileRef = CC988AF31E5C447900BAC694 /* Mail2.png */; };
+		CC988AF81E5C447900BAC694 /* wood+pattern+texture+7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC988AF41E5C447900BAC694 /* wood+pattern+texture+7.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +25,18 @@
 		CC988AC11E5B4A6900BAC694 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC988AC31E5B4A6900BAC694 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CC988AC41E5B4A6900BAC694 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CC988AC61E5B4A6900BAC694 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CC988AC71E5B4A6900BAC694 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CC988ACA1E5B4A6A00BAC694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC988ACC1E5B4A6A00BAC694 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC988ACF1E5B4A6A00BAC694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC988AD11E5B4A6A00BAC694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC988AEB1E5C2E5C00BAC694 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CC988AEC1E5C2E5C00BAC694 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CC988AEE1E5C34FD00BAC694 /* VRNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRNavigationView.h; sourceTree = "<group>"; };
+		CC988AEF1E5C34FD00BAC694 /* VRNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRNavigationView.m; sourceTree = "<group>"; };
+		CC988AF11E5C447900BAC694 /* green-back-button-png-image-69590.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-back-button-png-image-69590.png"; sourceTree = SOURCE_ROOT; };
+		CC988AF21E5C447900BAC694 /* iTunes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunes.png; sourceTree = SOURCE_ROOT; };
+		CC988AF31E5C447900BAC694 /* Mail2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mail2.png; sourceTree = SOURCE_ROOT; };
+		CC988AF41E5C447900BAC694 /* wood+pattern+texture+7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wood+pattern+texture+7.jpg"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +69,16 @@
 		CC988ABF1E5B4A6900BAC694 /* CustomNavBar */ = {
 			isa = PBXGroup;
 			children = (
+				CC988AF11E5C447900BAC694 /* green-back-button-png-image-69590.png */,
+				CC988AF21E5C447900BAC694 /* iTunes.png */,
+				CC988AF31E5C447900BAC694 /* Mail2.png */,
+				CC988AF41E5C447900BAC694 /* wood+pattern+texture+7.jpg */,
 				CC988AC31E5B4A6900BAC694 /* AppDelegate.h */,
 				CC988AC41E5B4A6900BAC694 /* AppDelegate.m */,
-				CC988AC61E5B4A6900BAC694 /* ViewController.h */,
-				CC988AC71E5B4A6900BAC694 /* ViewController.m */,
+				CC988AEB1E5C2E5C00BAC694 /* ViewController.h */,
+				CC988AEC1E5C2E5C00BAC694 /* ViewController.m */,
+				CC988AEE1E5C34FD00BAC694 /* VRNavigationView.h */,
+				CC988AEF1E5C34FD00BAC694 /* VRNavigationView.m */,
 				CC988AC91E5B4A6A00BAC694 /* Main.storyboard */,
 				CC988ACC1E5B4A6A00BAC694 /* Assets.xcassets */,
 				CC988ACE1E5B4A6A00BAC694 /* LaunchScreen.storyboard */,
@@ -138,9 +155,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC988AF51E5C447900BAC694 /* green-back-button-png-image-69590.png in Resources */,
+				CC988AF81E5C447900BAC694 /* wood+pattern+texture+7.jpg in Resources */,
+				CC988AF71E5C447900BAC694 /* Mail2.png in Resources */,
 				CC988AD01E5B4A6A00BAC694 /* LaunchScreen.storyboard in Resources */,
 				CC988ACD1E5B4A6A00BAC694 /* Assets.xcassets in Resources */,
 				CC988ACB1E5B4A6A00BAC694 /* Main.storyboard in Resources */,
+				CC988AF61E5C447900BAC694 /* iTunes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,9 +172,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC988AC81E5B4A6900BAC694 /* ViewController.m in Sources */,
 				CC988AC51E5B4A6900BAC694 /* AppDelegate.m in Sources */,
+				CC988AED1E5C2E5C00BAC694 /* ViewController.m in Sources */,
 				CC988AC21E5B4A6900BAC694 /* main.m in Sources */,
+				CC988AF01E5C34FD00BAC694 /* VRNavigationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

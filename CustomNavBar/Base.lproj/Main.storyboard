@@ -1,26 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WO9-VR-d9y">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Bar Data Source-->
+        <scene sceneID="X6T-8q-TxB">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="WO9-VR-d9y" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="gYa-IC-WCC"/>
+                        <viewControllerLayoutGuide type="bottom" id="bLS-r9-eDd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="vWT-1U-vtB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lar-hc-lts" customClass="VRNavigationView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xzB-fs-733">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TlD-YE-sR2">
+                                        <rect key="frame" x="8" y="22" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="TlD-YE-sR2" secondAttribute="height" multiplier="1:1" id="uHn-H2-x8h"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="leftButtonTapped:" destination="Lar-hc-lts" eventType="touchUpInside" id="dDd-WM-Soq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkY-Lg-iBR">
+                                        <rect key="frame" x="335" y="22" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hkY-Lg-iBR" secondAttribute="height" multiplier="1:1" id="S4P-nq-bN3"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="rightButtonTapped:" destination="Lar-hc-lts" eventType="touchUpInside" id="7Tv-BA-oCV"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="LNV-tV-MZP">
+                                        <rect key="frame" x="43" y="22" width="289" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="hkY-Lg-iBR" firstAttribute="top" secondItem="Lar-hc-lts" secondAttribute="top" constant="22" id="0dI-p2-qiw"/>
+                                    <constraint firstItem="TlD-YE-sR2" firstAttribute="width" secondItem="Lar-hc-lts" secondAttribute="width" multiplier="0.0853" id="8ke-1y-3Ia"/>
+                                    <constraint firstAttribute="bottom" secondItem="xzB-fs-733" secondAttribute="bottom" id="Dqk-es-A7Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="xzB-fs-733" secondAttribute="trailing" id="HoV-Uy-SPr"/>
+                                    <constraint firstItem="LNV-tV-MZP" firstAttribute="bottom" secondItem="TlD-YE-sR2" secondAttribute="bottom" id="TOS-dj-xJ0"/>
+                                    <constraint firstItem="LNV-tV-MZP" firstAttribute="top" secondItem="TlD-YE-sR2" secondAttribute="top" id="Tje-Om-x9d"/>
+                                    <constraint firstItem="LNV-tV-MZP" firstAttribute="leading" secondItem="TlD-YE-sR2" secondAttribute="trailing" constant="3" id="UUt-mF-pJf"/>
+                                    <constraint firstItem="TlD-YE-sR2" firstAttribute="leading" secondItem="Lar-hc-lts" secondAttribute="leading" constant="8" id="ZYF-A0-sqC"/>
+                                    <constraint firstItem="hkY-Lg-iBR" firstAttribute="width" secondItem="hkY-Lg-iBR" secondAttribute="height" multiplier="1:1" id="azl-Aq-Jl4"/>
+                                    <constraint firstItem="xzB-fs-733" firstAttribute="leading" secondItem="Lar-hc-lts" secondAttribute="leading" id="cjb-JS-x0F"/>
+                                    <constraint firstAttribute="width" secondItem="Lar-hc-lts" secondAttribute="height" multiplier="15:3" id="fOP-Ho-PbU"/>
+                                    <constraint firstItem="hkY-Lg-iBR" firstAttribute="leading" secondItem="LNV-tV-MZP" secondAttribute="trailing" constant="3" id="lQA-7u-H4J"/>
+                                    <constraint firstItem="hkY-Lg-iBR" firstAttribute="width" secondItem="TlD-YE-sR2" secondAttribute="width" id="lgg-mq-lE2"/>
+                                    <constraint firstItem="TlD-YE-sR2" firstAttribute="top" secondItem="Lar-hc-lts" secondAttribute="top" constant="22" id="nAK-dv-JEW"/>
+                                    <constraint firstItem="xzB-fs-733" firstAttribute="top" secondItem="Lar-hc-lts" secondAttribute="top" id="smc-8R-66m"/>
+                                    <constraint firstAttribute="trailing" secondItem="hkY-Lg-iBR" secondAttribute="trailing" constant="8" id="yRi-OI-gf4"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="barDataSource" destination="WO9-VR-d9y" id="z4b-QM-gDO"/>
+                                    <outlet property="barDelegate" destination="WO9-VR-d9y" id="seG-tK-Ngm"/>
+                                    <outlet property="imageView" destination="xzB-fs-733" id="AuT-xZ-HM5"/>
+                                    <outlet property="leftButton" destination="TlD-YE-sR2" id="0ZP-ez-tpF"/>
+                                    <outlet property="rightButton" destination="hkY-Lg-iBR" id="OMi-js-War"/>
+                                    <outlet property="title" destination="LNV-tV-MZP" id="iXK-an-Zaw"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lar-hc-lts" firstAttribute="leading" secondItem="vWT-1U-vtB" secondAttribute="leading" id="1aM-xS-Gjv"/>
+                            <constraint firstItem="Lar-hc-lts" firstAttribute="width" secondItem="vWT-1U-vtB" secondAttribute="width" id="2mF-Gs-QzI"/>
+                            <constraint firstItem="Lar-hc-lts" firstAttribute="top" secondItem="vWT-1U-vtB" secondAttribute="top" id="YV4-kG-npl"/>
+                            <constraint firstAttribute="trailing" secondItem="Lar-hc-lts" secondAttribute="trailing" id="sEo-GK-9S6"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vO3-Gv-XdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-146.40000000000001" y="2518.2908545727137"/>
         </scene>
     </scenes>
 </document>
