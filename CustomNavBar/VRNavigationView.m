@@ -23,33 +23,35 @@ NSString const *kDefaultLeftButtonImage = @"green-back-button-png-image-69590.pn
 
 @implementation VRNavigationView
 
-- (void)drawRect:(CGRect)rect {
-}
-
--(void)setBarDelegate:(id<VRNavigationDelegate>)barDelegate{
+-(void)setBarDelegate:(id<VRNavigationDelegate>)barDelegate
+{
     _barDelegate = barDelegate;
     [self setupAppearance];
 }
 
--(void)setBarDataSource:(id<VRNavigationDataSource>)barDataSource{
+-(void)setBarDataSource:(id<VRNavigationDataSource>)barDataSource
+{
     _barDataSource = barDataSource;
     [self setupAppearance];
 }
 
 #pragma mark - init
 
--(void)awakeFromNib{
+-(void)awakeFromNib
+{
     [super awakeFromNib];
     [self setupAppearance];
 }
 
--(instancetype)init{
+-(instancetype)init
+{
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
     self = [self initWithFrame:CGRectMake(0, 0, width, width/4)];
     return self;
 }
 
--(instancetype)initWithFrame:(CGRect)frame{
+-(instancetype)initWithFrame:(CGRect)frame
+{
     self = [super initWithFrame:frame];
     if (self) {
         [self addViewsAndConstraints];
@@ -58,9 +60,10 @@ NSString const *kDefaultLeftButtonImage = @"green-back-button-png-image-69590.pn
     return self;
 }
 
-#pragma mark -
+#pragma mark - views&constraints
 
--(void)addViewsAndConstraints{
+-(void)addImage
+{
     UIImageView *imageView = [[UIImageView alloc] init];
     self.imageView = imageView;
     self.imageView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -99,8 +102,10 @@ NSString const *kDefaultLeftButtonImage = @"green-back-button-png-image-69590.pn
                          attribute:NSLayoutAttributeRight
                          multiplier:1.0
                          constant:0.0]];
-    
-    
+}
+
+-(void)addBottomView
+{
     self.bottomView = [[UIView alloc] init];
     self.bottomView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:self.bottomView];
@@ -137,18 +142,18 @@ NSString const *kDefaultLeftButtonImage = @"green-back-button-png-image-69590.pn
                          attribute:NSLayoutAttributeRight
                          multiplier:1.0
                          constant:0.0]];
-    
-    
-    
-    
+}
+
+-(void)addRightButton
+{
     UIButton *rbutton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.rightButton = rbutton;
     self.rightButton.translatesAutoresizingMaskIntoConstraints = NO;
     [self.rightButton addTarget:self action:@selector(rightButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomView addSubview:self.rightButton];
     
-
-
+    
+    
     [self.bottomView addConstraint:[NSLayoutConstraint
                                     constraintWithItem:self.rightButton
                                     attribute:NSLayoutAttributeWidth
@@ -168,24 +173,26 @@ NSString const *kDefaultLeftButtonImage = @"green-back-button-png-image-69590.pn
                                      constant:0]];
     
     [self.bottomView addConstraint:[NSLayoutConstraint
-                         constraintWithItem:self.rightButton
-                         attribute:NSLayoutAttributeRight
-                         relatedBy:NSLayoutRelationEqual
-                         toItem:self.bottomView
-                         attribute:NSLayoutAttributeRight
-                         multiplier:1.0
-                         constant:-5.0]];
+                                    constraintWithItem:self.rightButton
+                                    attribute:NSLayoutAttributeRight
+                                    relatedBy:NSLayoutRelationEqual
+                                    toItem:self.bottomView
+                                    attribute:NSLayoutAttributeRight
+                                    multiplier:1.0
+                                    constant:-5.0]];
     
     [self.bottomView addConstraint:[NSLayoutConstraint
-                                       constraintWithItem:self.rightButton
-                                       attribute:NSLayoutAttributeCenterY
-                                       relatedBy:NSLayoutRelationEqual
-                                       toItem:self.bottomView
-                                       attribute:NSLayoutAttributeCenterY
-                                       multiplier:1.0
-                                       constant:0.0]];
+                                    constraintWithItem:self.rightButton
+                                    attribute:NSLayoutAttributeCenterY
+                                    relatedBy:NSLayoutRelationEqual
+                                    toItem:self.bottomView
+                                    attribute:NSLayoutAttributeCenterY
+                                    multiplier:1.0
+                                    constant:0.0]];
+}
 
-    
+-(void)addLeftButton
+{
     UIButton *lbutton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.leftButton = lbutton;
     self.leftButton.translatesAutoresizingMaskIntoConstraints = NO;
@@ -202,13 +209,13 @@ NSString const *kDefaultLeftButtonImage = @"green-back-button-png-image-69590.pn
                                     constant:0]];
     
     [self.leftButton addConstraint:[NSLayoutConstraint
-                                     constraintWithItem:self.leftButton
-                                     attribute:NSLayoutAttributeHeight
-                                     relatedBy:NSLayoutRelationEqual
-                                     toItem:self.leftButton
-                                     attribute:NSLayoutAttributeWidth
-                                     multiplier:1.0
-                                     constant:0]];
+                                    constraintWithItem:self.leftButton
+                                    attribute:NSLayoutAttributeHeight
+                                    relatedBy:NSLayoutRelationEqual
+                                    toItem:self.leftButton
+                                    attribute:NSLayoutAttributeWidth
+                                    multiplier:1.0
+                                    constant:0]];
     
     [self.bottomView addConstraint:[NSLayoutConstraint
                                     constraintWithItem:self.leftButton
@@ -227,8 +234,10 @@ NSString const *kDefaultLeftButtonImage = @"green-back-button-png-image-69590.pn
                                     attribute:NSLayoutAttributeCenterY
                                     multiplier:1.0
                                     constant:0.0]];
-    
-    
+}
+
+-(void)addTitle
+{
     UILabel *title = [[UILabel alloc] init];
     self.title = title;
     self.title.translatesAutoresizingMaskIntoConstraints = NO;
@@ -272,30 +281,39 @@ NSString const *kDefaultLeftButtonImage = @"green-back-button-png-image-69590.pn
                                     attribute:NSLayoutAttributeBottom
                                     multiplier:1.0
                                     constant:0]];
-    
+}
+
+-(void)addViewsAndConstraints
+{
+    [self addImage];
+    [self addBottomView];
+    [self addRightButton];
+    [self addLeftButton];
+    [self addTitle];
 }
 
 #pragma mark - action
 
-- (IBAction)leftButtonTapped:(id)sender{
+- (IBAction)leftButtonTapped:(id)sender
+{
     if ([self.barDelegate respondsToSelector:@selector(didSelectLeftBarButtonItem)] && self.leftButton.currentBackgroundImage!=nil)
     {
         [self.barDelegate didSelectLeftBarButtonItem];
     }
 }
 
-- (IBAction)rightButtonTapped:(id)sender{
+- (IBAction)rightButtonTapped:(id)sender
+{
     if ([self.barDelegate respondsToSelector:@selector(didSelectRightBarButtonItem)] && self.rightButton.currentBackgroundImage!=nil)
     {
         [self.barDelegate didSelectRightBarButtonItem];
     }
 }
 
-#pragma mark -
-
 #pragma mark - setup
 
--(void)setupAppearance{
+-(void)setupAppearance
+{
     if ([self.barDataSource respondsToSelector:@selector(getNavigationBarTitle)])
     {
         if ([self.barDataSource getNavigationBarTitle] != nil)
@@ -369,7 +387,5 @@ NSString const *kDefaultLeftButtonImage = @"green-back-button-png-image-69590.pn
         }
     }
 }
-
-#pragma mark -
 
 @end

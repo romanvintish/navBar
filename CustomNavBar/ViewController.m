@@ -15,7 +15,8 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     VRNavigationView *navBar = [[VRNavigationView alloc] init];
     navBar.barDelegate = self;
@@ -23,42 +24,49 @@
     [self.view addSubview:navBar];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
 #pragma mark - VRNavigationDataSource
 
-- (NSString*)getNavigationBarTitle{
+- (NSString*)getNavigationBarTitle
+{
     return @"ASDADADASDSADSADASDASdasdasdDASDASDasdasdasdasda";
 }
 
-- (UIColor*)getNavigationBarBackgroundColor{
+- (UIColor*)getNavigationBarBackgroundColor
+{
     return [UIColor redColor];
 }
 
-- (UIImage*)getNavigationBarBackgroundImage{
+- (UIImage*)getNavigationBarBackgroundImage
+{
     return [UIImage imageNamed:@"wood+pattern+texture+7.jpg"];
 }
 
-- (UIImage*)getLeftBarButtonItemBackgroundImage{
+- (UIImage*)getLeftBarButtonItemBackgroundImage
+{
     //return [UIImage imageNamed:@"iTunes.png"];
     return nil;
 }
 
-- (UIImage*)getRightBarButtonItemBackgroundImage{
+- (UIImage*)getRightBarButtonItemBackgroundImage
+{
     return [UIImage imageNamed:@"Mail2.png"];
 }
 
 #pragma mark - VRNavigationDelegate 
 
-- (void)didSelectLeftBarButtonItem{
+- (void)didSelectLeftBarButtonItem
+{
     NSLog(@"left");
 }
 
-- (void)didSelectRightBarButtonItem{
+- (void)didSelectRightBarButtonItem
+{
     NSLog(@"right");
-
 }
 
 @end
