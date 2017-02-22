@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "VRNavigationView.h"
 
-@interface ViewController ()
+@interface ViewController () <VRNavigationDelegate, VRNavigationDataSource>
 
 @end
 
@@ -16,6 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    VRNavigationView *navBar = [[VRNavigationView alloc] init];
+    navBar.barDelegate = self;
+    navBar.barDataSource = self;
+    [self.view addSubview:navBar];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,7 +30,7 @@
 #pragma mark - VRNavigationDataSource
 
 - (NSString*)getNavigationBarTitle{
-    return @"ASDADADASD";
+    return @"ASDADADASDSADSADASDASdasdasdDASDASDasdasdasdasda";
 }
 
 - (UIColor*)getNavigationBarBackgroundColor{
