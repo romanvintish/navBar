@@ -10,7 +10,6 @@
 #import "VRNavigationView.h"
 
 @interface ViewController () <VRNavigationDelegate, VRNavigationDataSource>
-
 @end
 
 @implementation ViewController
@@ -18,7 +17,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    VRNavigationView *navBar = [[VRNavigationView alloc] init];
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    VRNavigationView *navBar = [[VRNavigationView alloc] initWithHeight:height/7];
     navBar.barDelegate = self;
     navBar.barDataSource = self;
     [self.view addSubview:navBar];
@@ -48,7 +48,7 @@
 
 - (UIImage*)getLeftBarButtonItemBackgroundImage
 {
-    //return [UIImage imageNamed:@"iTunes.png"];
+    return [UIImage imageNamed:@"iTunes.png"];
     return nil;
 }
 

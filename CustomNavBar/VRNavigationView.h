@@ -39,4 +39,6 @@
 @property(nonatomic, weak) IBOutlet id<VRNavigationDelegate> barDelegate;
 @property(nonatomic, weak) IBOutlet id<VRNavigationDataSource> barDataSource;
 
+-(instancetype)initWithHeight:(CGFloat)height;
+
 @end

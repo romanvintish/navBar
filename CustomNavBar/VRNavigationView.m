@@ -45,8 +45,16 @@ NSString const *kDefaultLeftButtonImage = @"green-back-button-png-image-69590.pn
 
 -(instancetype)init
 {
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
-    self = [self initWithFrame:CGRectMake(0, 0, width, width/4)];
+    self = [self initWithFrame:CGRectMake(0, 0, width, height/7)];
+    return self;
+}
+
+-(instancetype)initWithHeight:(CGFloat)height
+{
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    self = [self initWithFrame:CGRectMake(0, 0, width, height)];
     return self;
 }
 
@@ -61,6 +69,15 @@ NSString const *kDefaultLeftButtonImage = @"green-back-button-png-image-69590.pn
 }
 
 #pragma mark - views&constraints
+
+-(void)addViewsAndConstraints
+{
+    [self addImage];
+    [self addBottomView];
+    [self addRightButton];
+    [self addLeftButton];
+    [self addTitle];
+}
 
 -(void)addImage
 {
@@ -283,16 +300,7 @@ NSString const *kDefaultLeftButtonImage = @"green-back-button-png-image-69590.pn
                                     constant:0]];
 }
 
--(void)addViewsAndConstraints
-{
-    [self addImage];
-    [self addBottomView];
-    [self addRightButton];
-    [self addLeftButton];
-    [self addTitle];
-}
-
-#pragma mark - action
+#pragma mark - actions
 
 - (IBAction)leftButtonTapped:(id)sender
 {
